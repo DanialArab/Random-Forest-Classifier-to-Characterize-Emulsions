@@ -2,14 +2,14 @@
 
 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0920410522007045?via%3Dihub/" target="_blank" rel="noopener">link to the article</a>
 
-In this work, we designed microfluidic experiments to investigate the effect of various chemicals to emulsify heavy oil in water. This repository is focused on the machine learning part of our work, where we used Random forest classifier to perform pixel level microfluidic image segmentation. These results allow us to precisely calculate oil recovery and quantify the effect of various chemicals on emulsion droplet size distributions. Ground truths were generated using an annotation platform, apeer.com (Fig. 1b). As shown in Fig. 1c, oil, water, and glass were labelled as white, black, and gray, respectively.
+In this work, we designed microfluidic experiments to investigate the effect of various chemicals to emulsify heavy oil in water. This repository is focused on the machine learning pipeline, where we used random forest classifier to perform pixel level microfluidic image segmentation. These results allow us to precisely calculate oil recovery and quantify the effect of various chemicals on emulsion droplet size distributions. Ground truths were generated using an annotation platform, apeer.com (Fig. 1b). As shown in Fig. 1c, oil, water, and glass were labelled as white, black, and gray, respectively.
 
 ![](https://raw.githubusercontent.com/DanialArab/images/main/my_papers/A%20close-up%20view%20of%20microfluidic%20chip%20images.PNG)
 Fig. 1: A close-up view of microfluidic chip images: a) the raw image captured during the experiment, b) the corresponding annotated image used to generate ground
 truth, c) ground truth used as training dataset to train Random Forest classifier (Ground truths were generated using an annotation platform, apeer.com)
 
 The training dataset containing a feature bank along with the ground truth masks were used to train the Random Forest classifier, which was then used to
-segment the images not being used to train the model. The feature bank was framed using original pixel values, Gabor kernels (OpenCV (Open-Source Computer Vision Library) documentation on Gabor kernels), various edge detection kernels (Canny, Roberts, Sobel, Scharr, and Prewitt), Gaussian, Median, and Variance kernels (they are depicted in Fig. 2). Formulating the Random Forest classifier with the features bank allows us to precisely segment each pixel, which in turn was used to quantify the effect of various chemicals on oil recovery. All the scripts were generated in Python using OpenCV.
+segment the images not being used to train the model. The feature bank was framed using original pixel values, Gabor kernels (OpenCV (Open-Source Computer Vision Library) documentation on Gabor kernels), various edge detection kernels (Canny, Roberts, Sobel, Scharr, and Prewitt), Gaussian, Median, and Variance kernels (they are depicted in Fig. 2). Formulating the Random Forest classifier with the features bank allows us to precisely segment each pixel, which in turn was used to quantify the effect of various chemicals on oil recovery. All the scripts were generated in Python using OpenCV. 
 
 ![](https://raw.githubusercontent.com/DanialArab/images/main/my_papers/filters.PNG)
 
